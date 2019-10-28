@@ -36,7 +36,7 @@ const CartListComponent = {
                               :id="item.id"
                               :qty="item.qty"
                               :price="item.price"
-                              :img="item.img">
+                              :img="item.cartdropmenuimg">
                             </cart-component>
                             <div class="total">
                                 <div>total</div>

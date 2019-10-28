@@ -62,14 +62,33 @@
       "title": "Mango People T-shirt",
       "price": 52.00,
       "qty": 1,
-      "img": "background-image: url(img/sc_img1.jpg)"
+      "cartdropmenuimg": "background-image: url(img/sc_img1.jpg)",
+      "cartpageimg": "background-image: url(img/shopping-card-img/Layer_43.jpg)",
+      "color": "Red",
+      "size": "Xll",
+      "shipping": "FREE"
     },
     {
       "id": 11,
       "title": "Rebox Zane",
       "price": 500.00,
       "qty": 2,
-      "img": "background-image: url(img/sc_img2.jpg)"
+      "cartdropmenuimg": "background-image: url(img/sc_img2.jpg)",
+      "cartpageimg": "background-image: url(img/shopping-card-img/Layer_44.jpg)",
+      "color": "Red",
+      "size": "Xll",
+      "shipping": "FREE"
+    },
+    {
+      "id": 12,
+      "title": "Rebox Zane",
+      "price": 600.00,
+      "qty": 2,
+      "cartdropmenuimg": "background-image: url(img/sc_img2.jpg)",
+      "cartpageimg": "background-image: url(img/shopping-card-img/Layer-45.jpg)",
+      "color": "Red",
+      "size": "Xll",
+      "shipping": "FREE"
     }
   ]
 }
