@@ -56,5 +56,20 @@
       "img": "background-image: url(img/catalog-img/9.jpg)"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": 10,
+      "title": "Mango People T-shirt",
+      "price": 52.00,
+      "qty": 1,
+      "img": "background-image: url(img/sc_img1.jpg)"
+    },
+    {
+      "id": 11,
+      "title": "Rebox Zane",
+      "price": 500.00,
+      "qty": 2,
+      "img": "background-image: url(img/sc_img2.jpg)"
+    }
+  ]
 }
