@@ -40,14 +40,8 @@ const CatalogListComponent = {
     }
 };
 
-
-const CartListComponent = {
-    props: [],
-    template: `<div class="sh"><a href="shopping-card.htm"><img src="img/Forma_1.svg" alt="basket"
-                                                                     class="shopping-cart"></a>
-                        <div class="sh-count">5</div>
-                        <div class="shopping-cart__drop">
-                            <div class="product-in-sc">
+const CartComponent = {
+  template: `<div class="product-in-sc">
                                 <a href="single-page.htm" style="float: left; width: 240px;">
                                     <div class="product-in-sc-img" style="background-image: url(img/sc_img1.jpg)">
                                     </div>
@@ -68,7 +62,16 @@ const CartListComponent = {
                                 <div class="sh__action"><a href="#" class="action"><i
                                         class="far fa-times-circle"></i></a></div>
 
-                            </div>
+                            </div>`
+};
+
+const CartListComponent = {
+    props: [],
+    template: `<div class="sh"><a href="shopping-card.htm"><img src="img/Forma_1.svg" alt="basket"
+                                                                     class="shopping-cart"></a>
+                        <div class="sh-count">5</div>
+                        <div class="shopping-cart__drop">
+                            <cart-component></cart-component>
                             <div class="product-in-sc"><a href="single-page.htm" style="float: left; width: 240px;">
                                 <div class="product-in-sc-img" style="background-image: url(img/sc_img2.jpg)">
                                 </div>
@@ -97,7 +100,9 @@ const CartListComponent = {
                             <a href="shopping-card.htm" class="sc-btn">go&nbsp;to&nbsp;cart</a>
                         </div>
                     </div>`,
-    components: {}
+    components: {
+        'cart-component': CartComponent
+    }
 };
 
 const app = new Vue({
