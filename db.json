@@ -1,0 +1,60 @@
+{
+  "users": [],
+  "goods": [
+    {
+      "id": 1,
+      "title": "Mango People T-shirt",
+      "price": 52.00,
+      "img": "background-image: url(img/catalog-img/1.jpg)"
+    },
+    {
+      "id": 2,
+      "title": "Mango People T-shirt",
+      "price": 52.00,
+      "img": "background-image: url(img/catalog-img/2.jpg)"
+    },
+    {
+      "id": 3,
+      "title": "Mango People T-shirt",
+      "price": 52.00,
+      "img": "background-image: url(img/catalog-img/3.jpg)"
+    },
+    {
+      "id": 4,
+      "title": "Mango People T-shirt",
+      "price": 52.00,
+      "img": "background-image: url(img/catalog-img/4.jpg)"
+    },
+    {
+      "id": 5,
+      "title": "Mango People T-shirt",
+      "price": 52.00,
+      "img": "background-image: url(img/catalog-img/5.jpg)"
+    },
+    {
+      "id": 6,
+      "title": "Mango People T-shirt",
+      "price": 52.00,
+      "img": "background-image: url(img/catalog-img/6.jpg)"
+    },
+    {
+      "id": 7,
+      "title": "Mango People T-shirt",
+      "price": 52.00,
+      "img": "background-image: url(img/catalog-img/7.jpg)"
+    },
+    {
+      "id": 8,
+      "title": "Mango People T-shirt",
+      "price": 52.00,
+      "img": "background-image: url(img/catalog-img/8.jpg)"
+    },
+    {
+      "id": 9,
+      "title": "Mango People T-shirt",
+      "price": 52.00,
+      "img": "background-image: url(img/catalog-img/9.jpg)"
+    }
+  ],
+  "cart": []
+}
