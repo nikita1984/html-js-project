@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<div class="wrapper" id="sc-root">
+<div class="wrapper" id="root">
     <div class="top">
         <!--HEADER-->
         <header class="header">
@@ -352,7 +352,104 @@
         <!--BREADCRUMBS-->
         <!--SHOPPING CART-->
         <div>
-            <cart-page-list-component :items="cart"></cart-page-list-component>
+            <div class="shopping-card container">
+                <div class="header__shopping-card">
+                    <div class="product-details">Product Details</div>
+                    <div class="flex-shopping-card">
+                        <div>unite Price</div>
+                        <div>Quantity</div>
+                        <div>shipping</div>
+                        <div>Subtotal</div>
+                        <div>ACTION</div>
+                    </div>
+                </div>
+
+                <div class="unit-shopping-card">
+
+                    <a href="single-page.htm" class="product-details shopping-card-unit">
+                        <div style="background-image: url(img/shopping-card-img/Layer_43.jpg);"
+                             class="unit-shopping-card-img"></div>
+                        <div class="unit-shopping-card-info">
+                            <div class="unit-shopping-card-name">Mango People T-shirt</div>
+                            <div class="unit-shopping-card-rating">
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                            </div>
+                            <div class="unit-shopping-card-color"><span class="color-size">Color:</span> Red</div>
+                            <div class="unit-shopping-card-color"><span class="color-size">Size:</span> Xll</div>
+                        </div>
+                    </a>
+
+                    <div class="flex-shopping-card">
+                        <div class="shopping-card-price">$150</div>
+                        <div><input type="number" placeholder="2" class="quanity"></div>
+                        <div class="shipping-shopping-card">free</div>
+                        <div class="shopping-card-price">$300</div>
+                        <div><a href="#" class="action"><i class="far fa-times-circle"></i></a></div>
+                    </div>
+                </div>
+
+                <div class="unit-shopping-card">
+                    <a href="single-page.htm" class="product-details shopping-card-unit">
+                        <div style="background-image: url(img/shopping-card-img/Layer_44.jpg);"
+                             class="unit-shopping-card-img"></div>
+                        <div class="unit-shopping-card-info">
+                            <div class="unit-shopping-card-name">Mango People T-shirt</div>
+                            <div class="unit-shopping-card-rating">
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                            </div>
+                            <div class="unit-shopping-card-color"><span class="color-size">Color:</span> Red</div>
+                            <div class="unit-shopping-card-color"><span class="color-size">Size:</span> Xll</div>
+                        </div>
+                    </a>
+                    <div class="flex-shopping-card">
+                        <div class="shopping-card-price">$150</div>
+                        <div><input type="number" placeholder="2" class="quanity"></div>
+                        <div class="shipping-shopping-card">free</div>
+                        <div class="shopping-card-price">$300</div>
+                        <div><a href="#" class="action"><i class="far fa-times-circle"></i></a></div>
+                    </div>
+                </div>
+
+                <div class="unit-shopping-card">
+                    <a href="single-page.htm" class="product-details shopping-card-unit">
+                        <div style="background-image: url(img/shopping-card-img/Layer-45.jpg);"
+                             class="unit-shopping-card-img"></div>
+                        <div class="unit-shopping-card-info">
+                            <div class="unit-shopping-card-name">Mango People T-shirt</div>
+                            <div class="unit-shopping-card-rating">
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                            </div>
+                            <div class="unit-shopping-card-color"><span class="color-size">Color:</span> Red</div>
+                            <div class="unit-shopping-card-color"><span class="color-size">Size:</span> Xll</div>
+                        </div>
+                    </a>
+                    <div class="flex-shopping-card">
+                        <div class="shopping-card-price">$150</div>
+                        <div><input type="number" placeholder="2" class="quanity"></div>
+                        <div class="shipping-shopping-card">free</div>
+                        <div class="shopping-card-price">$300</div>
+                        <div><a href="#" class="action"><i class="far fa-times-circle"></i></a></div>
+                    </div>
+                </div>
+
+                <div class="shopping-card-buttons">
+                    <div><a href="#" class="btn">cLEAR SHOPPING CART</a></div>
+                    <div><a href="checkout.htm" class="btn">cONTINUE sHOPPING</a></div>
+                </div>
+
+            </div>
             <!--SHOPPING CART-->
             <!--SHOPPING CART FORMS-->
             <div class="container flex">
@@ -475,7 +572,7 @@
     </div>
     <!--FOOTER-->
 </div>
-<script src="shopping-card.js"></script>
+<script src="main.js"></script>
 </body>
 
 </html>
