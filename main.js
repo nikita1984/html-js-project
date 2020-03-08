@@ -30,7 +30,8 @@ const SCListElement = {
 
 const SСListComponent = {
     props: ['items'],
-    template: `<div class="shopping-card container">
+    template: `<div>
+            <div class="shopping-card container">
                 <div class="header__shopping-card">
                     <div class="product-details">Product Details</div>
                     <div class="flex-shopping-card">
@@ -55,7 +56,38 @@ const SСListComponent = {
                     <div><a href="#" class="btn">cLEAR SHOPPING CART</a></div>
                     <div><a href="checkout.htm" class="btn">cONTINUE sHOPPING</a></div>
                 </div>
-            </div>`,
+            </div>
+            <div class="container flex">
+                <div class="flex-element">
+                    <div class="flex-header">Shipping Adress</div>
+                    <select name="country" id="country" class="choice-country" title="Choice your country">
+                        <option value="bangladesh">Bangladesh</option>
+                        <option value="russia">Russia</option>
+                    </select>
+                    <input type="text" placeholder="State" class="state">
+                    <input type="text" placeholder="Postcode/Zip" class="state">
+                    <div style="margin-top: 23px;"><a href="#" class="btn">get a&nbsp;quote</a></div>
+                </div>
+                <div class="flex-element">
+                    <div class="flex-header">coupon discount</div>
+                    <div class="coupon">Enter your coupon code if&nbsp;you have one</div>
+                    <input type="text" placeholder="coupon code" class="coupon-input">
+                    <div style="margin-top: 25px;"><a href="#" class="btn">Apply coupon</a></div>
+                </div>
+                <div class="checkout-panel">
+                    <div class="border-checkout">
+                        <div class="sub-total">Sub total<span class="sub-total-price">$ {{total}}</span></div>
+                        <div class="grand-total">GRAND TOTAL<span class="grand-total-price">$ {{total}}</span></div>
+                    </div>
+                    <div><a href="checkout.htm" class="check-btn">proceed to&nbsp;checkout</a></div>
+                </div>
+            </div>
+      </div>`,
+    computed: {
+        total() {
+            return this.items.reduce((acc, item) => acc + item.qty * item.price, 0);
+        },
+    },
     components: {
         'sc-list-element': SCListElement
     }

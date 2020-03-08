@@ -351,137 +351,7 @@
         </section>
         <!--BREADCRUMBS-->
         <!--SHOPPING CART-->
-        <div>
-            <sc-list-component :items="cart"></sc-list-component>
-            <!--
-             <div class="shopping-card container">
-                <div class="header__shopping-card">
-                    <div class="product-details">Product Details</div>
-                    <div class="flex-shopping-card">
-                        <div>unite Price</div>
-                        <div>Quantity</div>
-                        <div>shipping</div>
-                        <div>Subtotal</div>
-                        <div>ACTION</div>
-                    </div>
-                </div>
-
-                <div class="unit-shopping-card">
-
-                    <a href="single-page.htm" class="product-details shopping-card-unit">
-                        <div style="background-image: url(img/shopping-card-img/Layer_43.jpg);"
-                             class="unit-shopping-card-img"></div>
-                        <div class="unit-shopping-card-info">
-                            <div class="unit-shopping-card-name">Mango People T-shirt</div>
-                            <div class="unit-shopping-card-rating">
-                                <i class="fas fa-star rat"></i>
-                                <i class="fas fa-star rat"></i>
-                                <i class="fas fa-star rat"></i>
-                                <i class="fas fa-star rat"></i>
-                                <i class="fas fa-star rat"></i>
-                            </div>
-                            <div class="unit-shopping-card-color"><span class="color-size">Color:</span> Red</div>
-                            <div class="unit-shopping-card-color"><span class="color-size">Size:</span> Xll</div>
-                        </div>
-                    </a>
-
-                    <div class="flex-shopping-card">
-                        <div class="shopping-card-price">$150</div>
-                        <div><input type="number" placeholder="2" class="quanity"></div>
-                        <div class="shipping-shopping-card">free</div>
-                        <div class="shopping-card-price">$300</div>
-                        <div><a href="#" class="action"><i class="far fa-times-circle"></i></a></div>
-                    </div>
-                </div>
-
-                <div class="unit-shopping-card">
-                    <a href="single-page.htm" class="product-details shopping-card-unit">
-                        <div style="background-image: url(img/shopping-card-img/Layer_44.jpg);"
-                             class="unit-shopping-card-img"></div>
-                        <div class="unit-shopping-card-info">
-                            <div class="unit-shopping-card-name">Mango People T-shirt</div>
-                            <div class="unit-shopping-card-rating">
-                                <i class="fas fa-star rat"></i>
-                                <i class="fas fa-star rat"></i>
-                                <i class="fas fa-star rat"></i>
-                                <i class="fas fa-star rat"></i>
-                                <i class="fas fa-star rat"></i>
-                            </div>
-                            <div class="unit-shopping-card-color"><span class="color-size">Color:</span> Red</div>
-                            <div class="unit-shopping-card-color"><span class="color-size">Size:</span> Xll</div>
-                        </div>
-                    </a>
-                    <div class="flex-shopping-card">
-                        <div class="shopping-card-price">$150</div>
-                        <div><input type="number" placeholder="2" class="quanity"></div>
-                        <div class="shipping-shopping-card">free</div>
-                        <div class="shopping-card-price">$300</div>
-                        <div><a href="#" class="action"><i class="far fa-times-circle"></i></a></div>
-                    </div>
-                </div>
-
-                <div class="unit-shopping-card">
-                    <a href="single-page.htm" class="product-details shopping-card-unit">
-                        <div style="background-image: url(img/shopping-card-img/Layer-45.jpg);"
-                             class="unit-shopping-card-img"></div>
-                        <div class="unit-shopping-card-info">
-                            <div class="unit-shopping-card-name">Mango People T-shirt</div>
-                            <div class="unit-shopping-card-rating">
-                                <i class="fas fa-star rat"></i>
-                                <i class="fas fa-star rat"></i>
-                                <i class="fas fa-star rat"></i>
-                                <i class="fas fa-star rat"></i>
-                                <i class="fas fa-star rat"></i>
-                            </div>
-                            <div class="unit-shopping-card-color"><span class="color-size">Color:</span> Red</div>
-                            <div class="unit-shopping-card-color"><span class="color-size">Size:</span> Xll</div>
-                        </div>
-                    </a>
-                    <div class="flex-shopping-card">
-                        <div class="shopping-card-price">$150</div>
-                        <div><input type="number" placeholder="2" class="quanity"></div>
-                        <div class="shipping-shopping-card">free</div>
-                        <div class="shopping-card-price">$300</div>
-                        <div><a href="#" class="action"><i class="far fa-times-circle"></i></a></div>
-                    </div>
-                </div>
-
-                <div class="shopping-card-buttons">
-                    <div><a href="#" class="btn">cLEAR SHOPPING CART</a></div>
-                    <div><a href="checkout.htm" class="btn">cONTINUE sHOPPING</a></div>
-                </div>
-
-            </div>
-             -->
-            <!--SHOPPING CART-->
-            <!--SHOPPING CART FORMS-->
-            <div class="container flex">
-                <div class="flex-element">
-                    <div class="flex-header">Shipping Adress</div>
-                    <select name="country" id="country" class="choice-country" title="Choice your country">
-                        <option value="bangladesh">Bangladesh</option>
-                        <option value="russia">Russia</option>
-                    </select>
-                    <input type="text" placeholder="State" class="state">
-                    <input type="text" placeholder="Postcode/Zip" class="state">
-                    <div style="margin-top: 23px;"><a href="#" class="btn">get a&nbsp;quote</a></div>
-                </div>
-                <div class="flex-element">
-                    <div class="flex-header">coupon discount</div>
-                    <div class="coupon">Enter your coupon code if&nbsp;you have one</div>
-                    <input type="text" placeholder="coupon code" class="coupon-input">
-                    <div style="margin-top: 25px;"><a href="#" class="btn">Apply coupon</a></div>
-                </div>
-                <div class="checkout-panel">
-                    <div class="border-checkout">
-                        <div class="sub-total">Sub total<span class="sub-total-price">$900</span></div>
-                        <div class="grand-total">GRAND TOTAL<span class="grand-total-price">$900</span></div>
-                    </div>
-                    <div><a href="checkout.htm" class="check-btn">proceed to&nbsp;checkout</a></div>
-                </div>
-            </div>
-        </div>
-        <!--SHOPPING CART FORMS-->
+        <sc-list-component :items="cart"></sc-list-component>
         <!--SUBSCRIBE PANEL-->
         <div class="subscribe">
             <div class="container">
@@ -503,7 +373,7 @@
                     <h3>Subscribe</h3>
                     <h4>FOR OUR NEWLETTER AND PROMOTION</h4>
                     <form action="#" class="fs">
-                        <input type="email" class="form" placeholder="Ener Your Email">
+                        <input type="email" class="form" placeholder="Enter Your Email">
                         <button class="sub-but">Subscribe</button>
                     </form>
                 </article>
