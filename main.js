@@ -22,7 +22,7 @@ const SCListElement = {
                         <div class="shopping-card-price">$ {{price}}</div>
                         <div><input type="number" :placeholder="qty" class="quanity"></div>
                         <div class="shipping-shopping-card">{{shipping}}</div>
-                        <div class="shopping-card-price">$300</div>
+                        <div class="shopping-card-price">$ {{price * qty}}</div>
                         <div><a href="#" class="action"><i class="far fa-times-circle"></i></a></div>
                     </div>
                 </div>`
