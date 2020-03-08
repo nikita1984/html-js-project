@@ -1,4 +1,4 @@
-const CartPageListElementComponent = {
+const CartPageListElement = {
         props: ['id', 'title', 'qty', 'price', 'cartpageimg', 'color', 'size', 'shipping'],
         template:`<div class="unit-shopping-card">
 
@@ -42,7 +42,7 @@ const CartPageListComponent = {
                         <div>ACTION</div>
                     </div>
                 </div>
-                <cart-page-list-element-component v-for="item in items"
+                <cart-page-list-element v-for="item in items"
                               :key="item.id"
                               :title="item.title"
                               :id="item.id"
@@ -52,7 +52,7 @@ const CartPageListComponent = {
                               :color="item.color"
                               :size="item.size"
                               :shipping="item.shipping">
-                              </cart-page-list-element-component>
+                              </cart-page-list-element>
                 <div class="shopping-card-buttons">
                     <div><a href="#" class="btn">cLEAR SHOPPING CART</a></div>
                     <div><a href="checkout.htm" class="btn">cONTINUE sHOPPING</a></div>
@@ -60,7 +60,7 @@ const CartPageListComponent = {
 
             </div>`,
     components: {
-        'cart-page-list-element-component': CartPageListElementComponent
+        'cart-page-list-element': CartPageListElement
     }
 };
 

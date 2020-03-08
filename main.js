@@ -1,3 +1,104 @@
+const SСListComponent = {
+    template: `<div class="shopping-card container">
+                <div class="header__shopping-card">
+                    <div class="product-details">Product Details</div>
+                    <div class="flex-shopping-card">
+                        <div>unite Price</div>
+                        <div>Quantity</div>
+                        <div>shipping</div>
+                        <div>Subtotal</div>
+                        <div>ACTION</div>
+                    </div>
+                </div>
+
+                <div class="unit-shopping-card">
+
+                    <a href="single-page.htm" class="product-details shopping-card-unit">
+                        <div style="background-image: url(img/shopping-card-img/Layer_43.jpg);"
+                             class="unit-shopping-card-img"></div>
+                        <div class="unit-shopping-card-info">
+                            <div class="unit-shopping-card-name">Mango People T-shirt</div>
+                            <div class="unit-shopping-card-rating">
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                            </div>
+                            <div class="unit-shopping-card-color"><span class="color-size">Color:</span> Red</div>
+                            <div class="unit-shopping-card-color"><span class="color-size">Size:</span> Xll</div>
+                        </div>
+                    </a>
+
+                    <div class="flex-shopping-card">
+                        <div class="shopping-card-price">$150</div>
+                        <div><input type="number" placeholder="2" class="quanity"></div>
+                        <div class="shipping-shopping-card">free</div>
+                        <div class="shopping-card-price">$300</div>
+                        <div><a href="#" class="action"><i class="far fa-times-circle"></i></a></div>
+                    </div>
+                </div>
+
+                <div class="unit-shopping-card">
+                    <a href="single-page.htm" class="product-details shopping-card-unit">
+                        <div style="background-image: url(img/shopping-card-img/Layer_44.jpg);"
+                             class="unit-shopping-card-img"></div>
+                        <div class="unit-shopping-card-info">
+                            <div class="unit-shopping-card-name">Mango People T-shirt</div>
+                            <div class="unit-shopping-card-rating">
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                            </div>
+                            <div class="unit-shopping-card-color"><span class="color-size">Color:</span> Red</div>
+                            <div class="unit-shopping-card-color"><span class="color-size">Size:</span> Xll</div>
+                        </div>
+                    </a>
+                    <div class="flex-shopping-card">
+                        <div class="shopping-card-price">$150</div>
+                        <div><input type="number" placeholder="2" class="quanity"></div>
+                        <div class="shipping-shopping-card">free</div>
+                        <div class="shopping-card-price">$300</div>
+                        <div><a href="#" class="action"><i class="far fa-times-circle"></i></a></div>
+                    </div>
+                </div>
+
+                <div class="unit-shopping-card">
+                    <a href="single-page.htm" class="product-details shopping-card-unit">
+                        <div style="background-image: url(img/shopping-card-img/Layer-45.jpg);"
+                             class="unit-shopping-card-img"></div>
+                        <div class="unit-shopping-card-info">
+                            <div class="unit-shopping-card-name">Mango People T-shirt</div>
+                            <div class="unit-shopping-card-rating">
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                                <i class="fas fa-star rat"></i>
+                            </div>
+                            <div class="unit-shopping-card-color"><span class="color-size">Color:</span> Red</div>
+                            <div class="unit-shopping-card-color"><span class="color-size">Size:</span> Xll</div>
+                        </div>
+                    </a>
+                    <div class="flex-shopping-card">
+                        <div class="shopping-card-price">$150</div>
+                        <div><input type="number" placeholder="2" class="quanity"></div>
+                        <div class="shipping-shopping-card">free</div>
+                        <div class="shopping-card-price">$300</div>
+                        <div><a href="#" class="action"><i class="far fa-times-circle"></i></a></div>
+                    </div>
+                </div>
+
+                <div class="shopping-card-buttons">
+                    <div><a href="#" class="btn">cLEAR SHOPPING CART</a></div>
+                    <div><a href="checkout.htm" class="btn">cONTINUE sHOPPING</a></div>
+                </div>
+
+            </div>`
+};
+
 const CartComponent = {
     props: ['id', 'title', 'qty', 'price', 'img'],
     template: `<div class="product-in-sc">
@@ -114,7 +215,8 @@ const app = new Vue({
     },
     components: {
         'catalog-list-component': CatalogListComponent,
-        'cart-list-component': CartListComponent
+        'cart-list-component': CartListComponent,
+        'sc-list-component': SСListComponent
     },
 });
 
