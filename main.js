@@ -1,17 +1,5 @@
-const SСListComponent = {
-    template: `<div class="shopping-card container">
-                <div class="header__shopping-card">
-                    <div class="product-details">Product Details</div>
-                    <div class="flex-shopping-card">
-                        <div>unite Price</div>
-                        <div>Quantity</div>
-                        <div>shipping</div>
-                        <div>Subtotal</div>
-                        <div>ACTION</div>
-                    </div>
-                </div>
-
-                <div class="unit-shopping-card">
+const SCListElement = {
+    template: `<div class="unit-shopping-card">
 
                     <a href="single-page.htm" class="product-details shopping-card-unit">
                         <div style="background-image: url(img/shopping-card-img/Layer_43.jpg);"
@@ -37,7 +25,23 @@ const SСListComponent = {
                         <div class="shopping-card-price">$300</div>
                         <div><a href="#" class="action"><i class="far fa-times-circle"></i></a></div>
                     </div>
+                </div>`
+};
+
+const SСListComponent = {
+    template: `<div class="shopping-card container">
+                <div class="header__shopping-card">
+                    <div class="product-details">Product Details</div>
+                    <div class="flex-shopping-card">
+                        <div>unite Price</div>
+                        <div>Quantity</div>
+                        <div>shipping</div>
+                        <div>Subtotal</div>
+                        <div>ACTION</div>
+                    </div>
                 </div>
+
+                <sc-list-element></sc-list-element>
 
                 <div class="unit-shopping-card">
                     <a href="single-page.htm" class="product-details shopping-card-unit">
@@ -96,7 +100,10 @@ const SСListComponent = {
                     <div><a href="checkout.htm" class="btn">cONTINUE sHOPPING</a></div>
                 </div>
 
-            </div>`
+            </div>`,
+    components: {
+        'sc-list-element': SCListElement
+    }
 };
 
 const CartComponent = {
