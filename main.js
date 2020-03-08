@@ -61,7 +61,7 @@ const SСListComponent = {
     }
 };
 
-const CartComponent = {
+const CartElement = {
     props: ['id', 'title', 'qty', 'price', 'img'],
     template: `<div class="product-in-sc">
                                 <a href="single-page.htm" style="float: left; width: 240px;">
@@ -93,24 +93,29 @@ const CartListComponent = {
                                                                      class="shopping-cart"></a>
                         <div class="sh-count">5</div>
                         <div class="shopping-cart__drop">
-                            <cart-component v-for="item in items"
+                            <cart-element v-for="item in items"
                               :key="item.id"
                               :title="item.title"
                               :id="item.id"
                               :qty="item.qty"
                               :price="item.price"
                               :img="item.cartDropMenuImage">
-                            </cart-component>
+                            </cart-element>
                             <div class="total">
                                 <div>total</div>
-                                <div>$500.00</div>
+                                <div>$ {{total}}</div>
                             </div>
                             <a href="checkout.htm" class="sc-btn">Checkout</a>
                             <a href="shopping-card.htm" class="sc-btn">go&nbsp;to&nbsp;cart</a>
                         </div>
                     </div>`,
+    computed: {
+        total() {
+            return this.items.reduce((acc, item) => acc + item.qty * item.price, 0);
+        },
+    },
     components: {
-        'cart-component': CartComponent
+        'cart-element': CartElement
     }
 };
 
