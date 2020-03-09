@@ -168,10 +168,18 @@ const CatalogComponent = {
                                 </div>
                             </div>
                         </a>
-                        <a href="shopping-card.htm" class="addtocard1">Add to&nbsp;card</a>
+                        <!--                          
+                        <a href="#" class="addtocard1">Add to card</a>
+                        -->
+                        <button @click="handleBuyClick(id)"><span class="addtocard1">Add to card</span></button>
                         <a href="#" class="addtocard2"><i class="far fa-heart"></i></a>
                         <a href="#" class="addtocard3"><i class="fas fa-retweet"></i></a>
-                    </div>`
+                    </div>`,
+    methods: {
+        handleBuyClick(id) {
+            this.$emit('buy', id);
+        }
+    }
 };
 
 const CatalogListComponent = {
@@ -188,9 +196,14 @@ const CatalogListComponent = {
             @buy="handleBuyClick(item)"
             ></catalog-component>            
           </div>`,
+    methods: {
+        handleBuyClick(item) {
+            this.$emit('buy', item);
+        }
+    },
     components: {
         'catalog-component': CatalogComponent,
-    }
+    },
 };
 
 const HeaderComponent = {
@@ -647,6 +660,36 @@ const app = new Vue({
             .then((cart) => {
                 this.cart = cart;
             });
+    },
+    methods: {
+        handleBuyClick(item) {
+            // Определяем, что за элемент (item) надо внести в корзину
+            const cartItem = this.cart.find((cartItem) => +cartItem.id === +item.id);
+
+            // Если такой элемент существует, то прибавляем к существующему элементу +1 к количеству
+            if (cartItem) {
+                fetch(`/cart/${item.id}`, {
+                    method: 'PATCH',
+                    body: JSON.stringify({qty: cartItem.qty + 1}),
+                    headers: {
+                        'Content-type': 'application/json',
+                    }
+                }).then(() => {
+                    cartItem.qty++;
+                });
+                // Если не существует, то добавляем его в корзину с количеством, равным 1
+            } else {
+                fetch('/cart', {
+                    method: 'POST',
+                    body: JSON.stringify({...item, qty: 1}),
+                    headers: {
+                        'Content-type': 'application/json',
+                    },
+                }).then(() => {
+                    this.cart.push({...item, qty: 1});
+                });
+            }
+        }
     },
     components: {
         'catalog-list-component': CatalogListComponent,

@@ -1177,8 +1177,9 @@ details[open] > summary::first-line {
   line-height: 39px;
   background-image: url(../img/Forma_1_copy.svg);
   background-repeat: no-repeat;
-  background-position: left 14px center;
-  transition: outline-width 0.1s ease-out; }
+  background-position: left 10px center;
+  transition: outline-width 0.1s ease-out;
+  cursor: pointer; }
   .addtocard1:hover {
     outline: 2px solid #fff; }
 

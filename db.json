@@ -4,7 +4,7 @@
     {
       "id": 1,
       "title": "Mango People T-shirt",
-      "price": 52.00,
+      "price": 52,
       "img": "background-image: url(img/catalog-img/1.jpg)",
       "cartDropMenuImage": "background-image: url(img/sc_img1.jpg)",
       "cartPageImage": "background-image: url(img/shopping-card-img/Layer_43.jpg)",
@@ -16,7 +16,7 @@
     {
       "id": 2,
       "title": "Mango People T-shirt",
-      "price": 52.00,
+      "price": 52,
       "img": "background-image: url(img/catalog-img/2.jpg)",
       "cartDropMenuImage": "background-image: url(img/sc_img2.jpg)",
       "cartPageImage": "background-image: url(img/shopping-card-img/Layer_44.jpg)",
@@ -28,7 +28,7 @@
     {
       "id": 3,
       "title": "Mango People T-shirt",
-      "price": 52.00,
+      "price": 52,
       "img": "background-image: url(img/catalog-img/3.jpg)",
       "cartDropMenuImage": "background-image: url(img/sc_img2.jpg)",
       "cartPageImage": "background-image: url(img/shopping-card-img/Layer-45.jpg)",
@@ -40,7 +40,7 @@
     {
       "id": 4,
       "title": "Mango People T-shirt",
-      "price": 52.00,
+      "price": 52,
       "img": "background-image: url(img/catalog-img/4.jpg)",
       "cartDropMenuImage": "background-image: url(img/sc_img1.jpg)",
       "cartPageImage": "background-image: url(img/shopping-card-img/Layer_43.jpg)",
@@ -52,7 +52,7 @@
     {
       "id": 5,
       "title": "Mango People T-shirt",
-      "price": 52.00,
+      "price": 52,
       "img": "background-image: url(img/catalog-img/5.jpg)",
       "cartDropMenuImage": "background-image: url(img/sc_img2.jpg)",
       "cartPageImage": "background-image: url(img/shopping-card-img/Layer_44.jpg)",
@@ -64,7 +64,7 @@
     {
       "id": 6,
       "title": "Mango People T-shirt",
-      "price": 52.00,
+      "price": 52,
       "img": "background-image: url(img/catalog-img/6.jpg)",
       "cartDropMenuImage": "background-image: url(img/sc_img2.jpg)",
       "cartPageImage": "background-image: url(img/shopping-card-img/Layer-45.jpg)",
@@ -76,7 +76,7 @@
     {
       "id": 7,
       "title": "Mango People T-shirt",
-      "price": 52.00,
+      "price": 52,
       "img": "background-image: url(img/catalog-img/7.jpg)",
       "cartDropMenuImage": "background-image: url(img/sc_img1.jpg)",
       "cartPageImage": "background-image: url(img/shopping-card-img/Layer_43.jpg)",
@@ -88,7 +88,7 @@
     {
       "id": 8,
       "title": "Mango People T-shirt",
-      "price": 52.00,
+      "price": 52,
       "img": "background-image: url(img/catalog-img/8.jpg)",
       "cartDropMenuImage": "background-image: url(img/sc_img2.jpg)",
       "cartPageImage": "background-image: url(img/shopping-card-img/Layer_44.jpg)",
@@ -100,7 +100,7 @@
     {
       "id": 9,
       "title": "Mango People T-shirt",
-      "price": 52.00,
+      "price": 52,
       "img": "background-image: url(img/catalog-img/9.jpg)",
       "cartDropMenuImage": "background-image: url(img/sc_img2.jpg)",
       "cartPageImage": "background-image: url(img/shopping-card-img/Layer-45.jpg)",
@@ -111,40 +111,6 @@
     }
   ],
   "cart": [
-    {
-      "id": 1,
-      "title": "Mango People T-shirt",
-      "price": 52.00,
-      "qty": 1,
-      "img": "background-image: url(img/catalog-img/1.jpg)",
-      "cartDropMenuImage": "background-image: url(img/sc_img1.jpg)",
-      "cartPageImage": "background-image: url(img/shopping-card-img/Layer_43.jpg)",
-      "rating": 5,
-      "color": "Red",
-      "size": "Xll",
-      "shipping": "FREE"
-    },
-    {
-      "id": 11,
-      "title": "Rebox Zane",
-      "price": 500.00,
-      "qty": 1,
-      "cartDropMenuImage": "background-image: url(img/sc_img2.jpg)",
-      "cartPageImage": "background-image: url(img/shopping-card-img/Layer_44.jpg)",
-      "color": "Red",
-      "size": "Xll",
-      "shipping": "FREE"
-    },
-    {
-      "id": 12,
-      "title": "Rebox Zane",
-      "price": 600.00,
-      "qty": 1,
-      "cartDropMenuImage": "background-image: url(img/sc_img2.jpg)",
-      "cartPageImage": "background-image: url(img/shopping-card-img/Layer-45.jpg)",
-      "color": "Red",
-      "size": "Xll",
-      "shipping": "FREE"
-    }
+
   ]
 }
