@@ -614,6 +614,21 @@ const FooterSocialComponent = {
     </div>`
 };
 
+const BreadcrumbsComponent = {
+    template: `<section class="catalog-header">
+            <div class="container ch-flex">
+                <h1>New Arrivals</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.htm">Home</a>&nbsp;/</li>
+                        <li><a href="catalog.htm">Men</a>&nbsp;/</li>
+                        <li><a href="#" class="activate">New Arrivals</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>`
+};
+
 const app = new Vue({
     el: '#root',
     data: {
@@ -640,7 +655,8 @@ const app = new Vue({
         'navigation-component': NavigationComponent,
         'subscribe-panel-component': SubscribePanelComponent,
         'footer-component': FooterComponent,
-        'footer-social-component': FooterSocialComponent
+        'footer-social-component': FooterSocialComponent,
+        'breadcrumbs-component': BreadcrumbsComponent
     },
 });
 
