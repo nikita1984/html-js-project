@@ -194,7 +194,8 @@ const CatalogListComponent = {
 };
 
 const HeaderComponent = {
-  template: `<header class="header">
+    props: ['items'],
+    template: `<header class="header">
             <div class="container header__flex">
                 <div class="header__left">
                     <a class="logo" href="index.htm"><img src="img/logo.png" alt="logo">
@@ -231,11 +232,14 @@ const HeaderComponent = {
                     </form>
                 </div>
                 <div class="header__right">
-                   
+                    <cart-list-component :items="items"></cart-list-component>
                     <a class="button" href="#">My&nbsp;Account<i class="fas fa-caret-down"></i></a>
                 </div>
             </div>
-        </header>`
+        </header>`,
+    components: {
+        'cart-list-component': CartListComponent,
+    }
 };
 
 const app = new Vue({
@@ -259,7 +263,7 @@ const app = new Vue({
     },
     components: {
         'catalog-list-component': CatalogListComponent,
-        'cart-list-component': CartListComponent,
+
         'sc-list-component': SСListComponent,
         'header-component': HeaderComponent
     },
