@@ -24,7 +24,7 @@
         <breadcrumbs-component></breadcrumbs-component>
         <!--BREADCRUMBS-->
         <!--SHOPPING CART-->
-        <sc-list-component :items="cart"></sc-list-component>
+        <sc-list-component :items="cart" @delete="handleDeleteClick"></sc-list-component>
         <!--SUBSCRIBE PANEL-->
         <subscribe-panel-component></subscribe-panel-component>
     </div>

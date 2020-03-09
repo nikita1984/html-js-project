@@ -23,9 +23,19 @@ const SCListElement = {
                         <div><input type="number" :placeholder="qty" class="quanity"></div>
                         <div class="shipping-shopping-card">{{shipping}}</div>
                         <div class="shopping-card-price">$ {{price * qty}}</div>
-                        <div><a href="#" class="action"><i class="far fa-times-circle"></i></a></div>
+                        <!-- <div><a href="#" class="action"><i class="far fa-times-circle"></i></a></div> -->
+                        <button @click="handleDeleteClick" class="border-none">
+                            <div class="bc-white">
+                                <span class="action"><i class="far fa-times-circle"></i></span>
+                            </div>
+                        </button> 
                     </div>
-                </div>`
+                </div>`,
+    methods: {
+        handleDeleteClick(){
+            this.$emit('delete', this.id)
+        }
+    }
 };
 
 const SCListComponent = {
@@ -51,7 +61,8 @@ const SCListComponent = {
                               :img="item.cartPageImage"
                               :color="item.color"
                               :size="item.size"
-                              :shipping="item.shipping"></sc-list-element>
+                              :shipping="item.shipping"
+                              @delete="handleDeleteClick"></sc-list-element>
                 <div class="shopping-card-buttons">
                     <div><a href="#" class="btn">cLEAR SHOPPING CART</a></div>
                     <div><a href="checkout.htm" class="btn">cONTINUE sHOPPING</a></div>
@@ -87,6 +98,11 @@ const SCListComponent = {
         total() {
             return this.items.reduce((acc, item) => acc + item.qty * item.price, 0);
         },
+    },
+    methods: {
+        handleDeleteClick(id){
+            this.$emit('delete', id)
+        }
     },
     components: {
         'sc-list-element': SCListElement
@@ -688,6 +704,29 @@ const app = new Vue({
                 }).then(() => {
                     this.cart.push({...item, qty: 1});
                 });
+            }
+        },
+        handleDeleteClick(id) {
+            const cartItem = this.cart.find((cartItem) => +cartItem.id === +id);
+
+            if (cartItem && cartItem.qty > 1) {
+                fetch(`/cart/${id}`, {
+                    method: 'PATCH',
+                    body: JSON.stringify({qty: cartItem.qty - 1}),
+                    headers: {
+                        'Content-type': 'application/json',
+                    }
+                }).then(() => {
+                    cartItem.qty--;
+                });
+            } else {
+                if (confirm('Вы действительно хотите удалить последний товар?')) {
+                    fetch(`/cart/${id}`, {
+                        method: 'DELETE',
+                    }).then(() => {
+                        this.cart = this.cart.filter((item) => item.id !== id);
+                    });
+                }
             }
         }
     },

@@ -1515,7 +1515,9 @@ a:nth-child(8) {
   font-size: 16px;
   font-weight: 400;
   text-transform: uppercase;
-  transition: color 0.2s ease-out; }
+  transition: color 0.2s ease-out;
+  background-color: #ffffff;
+  cursor: pointer;}
   .action:hover {
     color: #222; }
 
@@ -1871,5 +1873,15 @@ a:nth-child(8) {
     transform: scale(1.05); }
 
 /*YOU MAY LIKE ALSO */
+/*OTHER*/
+.bc-white {
+    background-color: #ffffff; }
+.border-none {
+    border: none; }
+
+.border-none:focus {
+  outline: none;
+}
+/*OTHER*/
 
 /*# sourceMappingURL=style.css.map */

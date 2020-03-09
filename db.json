@@ -111,6 +111,18 @@
     }
   ],
   "cart": [
-
+    {
+      "id": 2,
+      "title": "Mango People T-shirt",
+      "price": 52,
+      "img": "background-image: url(img/catalog-img/2.jpg)",
+      "cartDropMenuImage": "background-image: url(img/sc_img2.jpg)",
+      "cartPageImage": "background-image: url(img/shopping-card-img/Layer_44.jpg)",
+      "rating": 5,
+      "color": "Red",
+      "size": "Xll",
+      "shipping": "FREE",
+      "qty": 1
+    }
   ]
 }
