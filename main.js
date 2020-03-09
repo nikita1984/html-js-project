@@ -20,7 +20,7 @@ const SCListElement = {
 
                     <div class="flex-shopping-card">
                         <div class="shopping-card-price">$ {{price}}</div>
-                        <div><input type="number" :placeholder="qty" class="quanity"></div>
+                        <div><input class="quanity" type="number" :value="qty" @input="handleQuantityChange"></div>
                         <div class="shipping-shopping-card">{{shipping}}</div>
                         <div class="shopping-card-price">$ {{price * qty}}</div>
                         <!-- <div><a href="#" class="action"><i class="far fa-times-circle"></i></a></div> -->
@@ -34,6 +34,9 @@ const SCListElement = {
     methods: {
         handleDeleteClick(){
             this.$emit('delete', this.id)
+        },
+        handleQuantityChange(event){
+            this.$emit('change', {id: this.id, qty: event.target.value})
         }
     }
 };
@@ -62,7 +65,8 @@ const SCListComponent = {
                               :color="item.color"
                               :size="item.size"
                               :shipping="item.shipping"
-                              @delete="handleDeleteClick"></sc-list-element>
+                              @delete="handleDeleteClick"
+                              @change="handleQuantityChange"></sc-list-element>
                 <div class="shopping-card-buttons">
                     <div><a href="#" class="btn">cLEAR SHOPPING CART</a></div>
                     <div><a href="checkout.htm" class="btn">cONTINUE sHOPPING</a></div>
@@ -102,6 +106,9 @@ const SCListComponent = {
     methods: {
         handleDeleteClick(id){
             this.$emit('delete', id)
+        },
+        handleQuantityChange(item){
+            this.$emit('change', item)
         }
     },
     components: {
@@ -728,6 +735,18 @@ const app = new Vue({
                     });
                 }
             }
+        },
+        handleQuantityChange(item) {
+            const cartItem = this.cart.find((cartItem) => +cartItem.id === +item.id);
+            cartItem.qty = item.qty;
+
+            fetch(`/cart/${item.id}`, {
+                method: 'PATCH',
+                body: JSON.stringify({qty: item.qty}),
+                headers: {
+                    'Content-type': 'application/json',
+                }
+            })
         }
     },
     components: {
