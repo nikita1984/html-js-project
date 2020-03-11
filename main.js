@@ -136,13 +136,15 @@ const CartElement = {
 
                                     </div>
                                 </a>
-                                <button @click="handleDeleteClick">
-                                    <div class="sh__action">
-                                        <a href="#" class="action">
-                                            <i class="far fa-times-circle"></i>
-                                        </a>
-                                    </div>
-                                </button>
+                                
+                                <div class="sh__action">
+                                    <button class="border-none" @click="handleDeleteClick">
+                                    <a href="#" class="action">
+                                        <i class="far fa-times-circle"></i>
+                                    </a>
+                                    </button>
+                                </div>
+                                
                             </div>`,
     methods: {
         handleDeleteClick(){
