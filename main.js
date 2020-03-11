@@ -136,10 +136,19 @@ const CartElement = {
 
                                     </div>
                                 </a>
-                                <div class="sh__action"><a href="#" class="action"><i
-                                        class="far fa-times-circle"></i></a></div>
-
-                            </div>`
+                                <button @click="handleDeleteClick">
+                                    <div class="sh__action">
+                                        <a href="#" class="action">
+                                            <i class="far fa-times-circle"></i>
+                                        </a>
+                                    </div>
+                                </button>
+                            </div>`,
+    methods: {
+        handleDeleteClick(){
+            this.$emit('delete', this.id)
+        }
+    }
 };
 
 const CartListComponent = {
@@ -154,7 +163,8 @@ const CartListComponent = {
                               :id="item.id"
                               :qty="item.qty"
                               :price="item.price"
-                              :img="item.cartDropMenuImage">
+                              :img="item.cartDropMenuImage" 
+                              @delete="handleDeleteClick">
                             </cart-element>
                             <div class="total">
                                 <div>total</div>
@@ -168,6 +178,11 @@ const CartListComponent = {
         total() {
             return this.items.reduce((acc, item) => acc + item.qty * item.price, 0);
         },
+    },
+    methods: {
+        handleDeleteClick(id){
+            this.$emit('delete', id)
+        }
     },
     components: {
         'cart-element': CartElement
@@ -268,11 +283,17 @@ const HeaderComponent = {
                     </form>
                 </div>
                 <div class="header__right">
-                    <cart-list-component :items="items"></cart-list-component>
+                    <cart-list-component :items="items" 
+                                         @delete="handleDeleteClick"></cart-list-component>
                     <a class="button" href="#">My&nbsp;Account<i class="fas fa-caret-down"></i></a>
                 </div>
             </div>
         </header>`,
+    methods: {
+        handleDeleteClick(id){
+            this.$emit('delete', id)
+        }
+    },
     components: {
         'cart-list-component': CartListComponent,
     }

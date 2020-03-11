@@ -16,7 +16,8 @@
     <div class="top">
         <!--HEADER-->
         <!--Подгонка в PixelPerfect-->
-        <header-component :items="cart"></header-component>
+        <header-component :items="cart"
+                          @delete="handleDeleteClick"></header-component>
         <!--HEADER-->
         <!--MENU-->
         <navigation-component></navigation-component>
