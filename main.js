@@ -157,7 +157,7 @@ const CartListComponent = {
     props: ['items'],
     template: `<div class="sh"><a href="shopping-card.htm"><img src="img/Forma_1.svg" alt="basket"
                                                                      class="shopping-cart"></a>
-                        <div class="sh-count">5</div>
+                        <div class="sh-count">{{countItems}}</div>
                         <div class="shopping-cart__drop">
                             <cart-element v-for="item in items"
                               :key="item.id"
@@ -180,11 +180,14 @@ const CartListComponent = {
         total() {
             return this.items.reduce((acc, item) => acc + item.qty * item.price, 0);
         },
+        countItems() {
+            return this.items.length;
+        }
     },
     methods: {
         handleDeleteClick(id){
             this.$emit('delete', id)
-        }
+        },
     },
     components: {
         'cart-element': CartElement
