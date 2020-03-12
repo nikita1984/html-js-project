@@ -62,7 +62,8 @@ FOR kids</span></h3>
         </div>
         <!--CATEGORIES-->
         <!--MAIN PAGE CATALOG-->
-        <feature-container-component></feature-container-component>
+        <feature-container-component :items="featureList"
+                                     @buy="handleBuyClick"></feature-container-component>
         <!--MAIN PAGE CATALOG-->
         <!--FEATURE-->
         <section class="feature container">

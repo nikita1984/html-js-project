@@ -670,7 +670,8 @@ li {
   background-image: url(../img/Forma_1_copy.svg);
   background-repeat: no-repeat;
   background-position: left 14px center;
-  transition: all 0.1s ease-out; }
+  transition: all 0.1s ease-out;
+  cursor: pointer; }
   .add:hover {
     outline: 2px solid #fff; }
 

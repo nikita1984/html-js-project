@@ -250,11 +250,12 @@ const CatalogListComponent = {
 };
 
 const FeatureContainerElement = {
+    props: ['id', 'title', 'img', 'price'],
     template: `<article class="product-flex">
                     <a href="single-page.htm" class="product">
-                        <div class="catalogunit" style="background-image: url(img/un1.jpg);"></div>
-                        <h4 class="unit-name">MANGO PEOPLE T-SHIRT</h4>
-                        <div class="unit-price">$52.00</div>
+                        <div class="catalogunit" :style="img"></div>
+                        <h4 class="unit-name">{{title}}</h4>
+                        <div class="unit-price">$ {{price}}</div>
                         <div class="unit-price-rating">
                             <i class="fas fa-star rat"></i>
                             <i class="fas fa-star rat"></i>
@@ -263,134 +264,39 @@ const FeatureContainerElement = {
                             <i class="fas fa-star rat"></i>
                         </div>
                     </a>
-                    <a href="shopping-card.htm" class="add">Add to&nbsp;Cart</a>
-                </article>`
+                    <button @click="handleBuyClick(id)">
+                        <a href="#" class="add">Add to&nbsp;Cart</a>
+                    </button>                    
+                </article>`,
+    methods: {
+        handleBuyClick(id){
+            this.$emit('buy', id)
+        }
+    }
 };
 
 const FeatureContainerComponent = {
+    props: ['items'],
     template: `<section class="container">
             <h2 class="Fetured-h2">Fetured Items</h2>
             <p class="Fetured-p">Shop for items based on&nbsp;what we&nbsp;featured in&nbsp;this week</p>
             <div class="flex-catalog">
-                <feature-container-element></feature-container-element>
-                <article class="product-flex">
-                    <a href="single-page.htm" class="product">
-                        <div class="catalogunit" style="background-image: url(img/un2.jpg);"></div>
-                        <h4 class="unit-name">MANGO PEOPLE T-SHIRT</h4>
-                        <div class="unit-price">$52.00</div>
-                        <div class="unit-price-rating">
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                        </div>
-                    </a>
-                    <a href="shopping-card.htm" class="add">Add to&nbsp;Cart</a>
-                </article>
-
-                <article class="product-flex">
-                    <a href="single-page.htm" class="product">
-                        <div class="catalogunit" style="background-image: url(img/un3.jpg);"></div>
-                        <h4 class="unit-name">MANGO PEOPLE T-SHIRT</h4>
-                        <div class="unit-price">$52.00</div>
-                        <div class="unit-price-rating">
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                        </div>
-                    </a>
-                    <a href="shopping-card.htm" class="add">Add to&nbsp;Cart</a>
-                </article>
-
-                <article class="product-flex">
-                    <a href="single-page.htm" class="product">
-                        <div class="catalogunit" style="background-image: url(img/un4.jpg);"></div>
-                        <h4 class="unit-name">MANGO PEOPLE T-SHIRT</h4>
-                        <div class="unit-price">$52.00</div>
-                        <div class="unit-price-rating">
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                        </div>
-                    </a>
-                    <a href="shopping-card.htm" class="add">Add to&nbsp;Cart</a>
-                </article>
-
-                <article class="product-flex">
-                    <a href="single-page.htm" class="product">
-                        <div class="catalogunit" style="background-image: url(img/un5.jpg);"></div>
-                        <h4 class="unit-name">MANGO PEOPLE T-SHIRT</h4>
-                        <div class="unit-price">$52.00</div>
-                        <div class="unit-price-rating">
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                        </div>
-                    </a>
-                    <a href="shopping-card.htm" class="add">Add to&nbsp;Cart</a>
-                </article>
-
-                <article class="product-flex">
-                    <a href="single-page.htm" class="product">
-                        <div class="catalogunit" style="background-image: url(img/un6.jpg);"></div>
-                        <h4 class="unit-name">MANGO PEOPLE T-SHIRT</h4>
-                        <div class="unit-price">$52.00</div>
-                        <div class="unit-price-rating">
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                        </div>
-                    </a>
-                    <a href="shopping-card.htm" class="add">Add to&nbsp;Cart</a>
-                </article>
-
-                <article class="product-flex">
-                    <a href="single-page.htm" class="product">
-                        <div class="catalogunit" style="background-image: url(img/un7.jpg);"></div>
-                        <h4 class="unit-name">MANGO PEOPLE T-SHIRT</h4>
-                        <div class="unit-price">$52.00</div>
-                        <div class="unit-price-rating">
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                        </div>
-                    </a>
-                    <a href="shopping-card.htm" class="add">Add to&nbsp;Cart</a>
-                </article>
-
-                <article class="product-flex">
-                    <a href="single-page.htm" class="product">
-                        <div class="catalogunit" style="background-image: url(img/un8.jpg);"></div>
-                        <h4 class="unit-name">MANGO PEOPLE T-SHIRT</h4>
-                        <div class="unit-price">$52.00</div>
-                        <div class="unit-price-rating">
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                        </div>
-                    </a>
-                    <a href="shopping-card.htm" class="add">Add to&nbsp;Cart</a>
-                </article>    
+                <feature-container-element  v-for="item in items"
+                                            :key="item.id"
+                                            :id="item.id"
+                                            :title="item.title"
+                                            :price="item.price"
+                                            :img="item.img"
+                                            @buy="handleBuyClick(item)"></feature-container-element>
             </div>
-
-
             <div class="browsebutton"><a class="button" href="catalog.htm">Browse All Product<i
                     class="fas fa-long-arrow-alt-right"></i></a></div>
         </section>`,
-
+    methods: {
+        handleBuyClick(item) {
+            this.$emit('buy', item);
+        }
+    },
     components: {
         'feature-container-element': FeatureContainerElement
     }
@@ -843,6 +749,7 @@ const app = new Vue({
     data: {
         items: [],
         cart: [],
+        featureList: [],
     },
     mounted() {
         fetch('/goods')
@@ -850,19 +757,21 @@ const app = new Vue({
             .then((goods) => {
                 this.items = goods;
             });
-
         fetch('/cart')
             .then(response => response.json())
             .then((cart) => {
                 this.cart = cart;
             });
+        fetch('/featureList')
+            .then(response => response.json())
+            .then((featureList) => {
+                this.featureList = featureList;
+            });
     },
     methods: {
         handleBuyClick(item) {
-            // Определяем, что за элемент (item) надо внести в корзину
             const cartItem = this.cart.find((cartItem) => +cartItem.id === +item.id);
 
-            // Если такой элемент существует, то прибавляем к существующему элементу +1 к количеству
             if (cartItem) {
                 fetch(`/cart/${item.id}`, {
                     method: 'PATCH',
