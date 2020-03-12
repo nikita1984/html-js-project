@@ -249,6 +249,153 @@ const CatalogListComponent = {
     },
 };
 
+const FeatureContainerElement = {
+    template: `<article class="product-flex">
+                    <a href="single-page.htm" class="product">
+                        <div class="catalogunit" style="background-image: url(img/un1.jpg);"></div>
+                        <h4 class="unit-name">MANGO PEOPLE T-SHIRT</h4>
+                        <div class="unit-price">$52.00</div>
+                        <div class="unit-price-rating">
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                        </div>
+                    </a>
+                    <a href="shopping-card.htm" class="add">Add to&nbsp;Cart</a>
+                </article>`
+};
+
+const FeatureContainerComponent = {
+    template: `<section class="container">
+            <h2 class="Fetured-h2">Fetured Items</h2>
+            <p class="Fetured-p">Shop for items based on&nbsp;what we&nbsp;featured in&nbsp;this week</p>
+            <div class="flex-catalog">
+                <feature-container-element></feature-container-element>
+                <article class="product-flex">
+                    <a href="single-page.htm" class="product">
+                        <div class="catalogunit" style="background-image: url(img/un2.jpg);"></div>
+                        <h4 class="unit-name">MANGO PEOPLE T-SHIRT</h4>
+                        <div class="unit-price">$52.00</div>
+                        <div class="unit-price-rating">
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                        </div>
+                    </a>
+                    <a href="shopping-card.htm" class="add">Add to&nbsp;Cart</a>
+                </article>
+
+                <article class="product-flex">
+                    <a href="single-page.htm" class="product">
+                        <div class="catalogunit" style="background-image: url(img/un3.jpg);"></div>
+                        <h4 class="unit-name">MANGO PEOPLE T-SHIRT</h4>
+                        <div class="unit-price">$52.00</div>
+                        <div class="unit-price-rating">
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                        </div>
+                    </a>
+                    <a href="shopping-card.htm" class="add">Add to&nbsp;Cart</a>
+                </article>
+
+                <article class="product-flex">
+                    <a href="single-page.htm" class="product">
+                        <div class="catalogunit" style="background-image: url(img/un4.jpg);"></div>
+                        <h4 class="unit-name">MANGO PEOPLE T-SHIRT</h4>
+                        <div class="unit-price">$52.00</div>
+                        <div class="unit-price-rating">
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                        </div>
+                    </a>
+                    <a href="shopping-card.htm" class="add">Add to&nbsp;Cart</a>
+                </article>
+
+                <article class="product-flex">
+                    <a href="single-page.htm" class="product">
+                        <div class="catalogunit" style="background-image: url(img/un5.jpg);"></div>
+                        <h4 class="unit-name">MANGO PEOPLE T-SHIRT</h4>
+                        <div class="unit-price">$52.00</div>
+                        <div class="unit-price-rating">
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                        </div>
+                    </a>
+                    <a href="shopping-card.htm" class="add">Add to&nbsp;Cart</a>
+                </article>
+
+                <article class="product-flex">
+                    <a href="single-page.htm" class="product">
+                        <div class="catalogunit" style="background-image: url(img/un6.jpg);"></div>
+                        <h4 class="unit-name">MANGO PEOPLE T-SHIRT</h4>
+                        <div class="unit-price">$52.00</div>
+                        <div class="unit-price-rating">
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                        </div>
+                    </a>
+                    <a href="shopping-card.htm" class="add">Add to&nbsp;Cart</a>
+                </article>
+
+                <article class="product-flex">
+                    <a href="single-page.htm" class="product">
+                        <div class="catalogunit" style="background-image: url(img/un7.jpg);"></div>
+                        <h4 class="unit-name">MANGO PEOPLE T-SHIRT</h4>
+                        <div class="unit-price">$52.00</div>
+                        <div class="unit-price-rating">
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                        </div>
+                    </a>
+                    <a href="shopping-card.htm" class="add">Add to&nbsp;Cart</a>
+                </article>
+
+                <article class="product-flex">
+                    <a href="single-page.htm" class="product">
+                        <div class="catalogunit" style="background-image: url(img/un8.jpg);"></div>
+                        <h4 class="unit-name">MANGO PEOPLE T-SHIRT</h4>
+                        <div class="unit-price">$52.00</div>
+                        <div class="unit-price-rating">
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                        </div>
+                    </a>
+                    <a href="shopping-card.htm" class="add">Add to&nbsp;Cart</a>
+                </article>    
+            </div>
+
+
+            <div class="browsebutton"><a class="button" href="catalog.htm">Browse All Product<i
+                    class="fas fa-long-arrow-alt-right"></i></a></div>
+        </section>`,
+
+    components: {
+        'feature-container-element': FeatureContainerElement
+    }
+};
+
 const HeaderComponent = {
     props: ['items'],
     template: `<header class="header">
@@ -783,7 +930,8 @@ const app = new Vue({
         'subscribe-panel-component': SubscribePanelComponent,
         'footer-component': FooterComponent,
         'footer-social-component': FooterSocialComponent,
-        'breadcrumbs-component': BreadcrumbsComponent
+        'breadcrumbs-component': BreadcrumbsComponent,
+        'feature-container-component': FeatureContainerComponent
     },
 });
 
