@@ -3,7 +3,7 @@ const RatingElement = {
 };
 
 const SCListElement = {
-    props: ['id', 'title', 'qty', 'price', 'img', 'color', 'size', 'shipping'],
+    props: ['id', 'title', 'qty', 'price', 'img', 'color', 'size', 'shipping', 'rating'],
     template: `<div class="unit-shopping-card">
                     <a href="single-page.htm" class="product-details shopping-card-unit">
                         <div :style="img"
@@ -11,11 +11,7 @@ const SCListElement = {
                         <div class="unit-shopping-card-info">
                             <div class="unit-shopping-card-name">{{title}}</div>
                             <div class="unit-shopping-card-rating">
-                                <rating-element></rating-element>
-                                <i class="fas fa-star rat"></i>
-                                <i class="fas fa-star rat"></i>
-                                <i class="fas fa-star rat"></i>
-                                <i class="fas fa-star rat"></i>
+                                <rating-element v-for="n in rating" :key="n"></rating-element>                                
                             </div>
                             <div class="unit-shopping-card-color"><span class="color-size">Color:</span> {{color}}</div>
                             <div class="unit-shopping-card-color"><span class="color-size">Size:</span> {{size}}</div>
@@ -27,7 +23,6 @@ const SCListElement = {
                         <div><input class="quanity" type="number" :value="qty" @input="handleQuantityChange"></div>
                         <div class="shipping-shopping-card">{{shipping}}</div>
                         <div class="shopping-card-price">$ {{price * qty}}</div>
-                        <!-- <div><a href="#" class="action"><i class="far fa-times-circle"></i></a></div> -->
                         <button @click="handleDeleteClick" class="border-none">
                             <div class="bc-white">
                                 <span class="action"><i class="far fa-times-circle"></i></span>
@@ -72,6 +67,7 @@ const SCListComponent = {
                               :color="item.color"
                               :size="item.size"
                               :shipping="item.shipping"
+                              :rating="item.rating"
                               @delete="handleDeleteClick"
                               @change="handleQuantityChange"></sc-list-element>
                 <div class="shopping-card-buttons">
@@ -124,7 +120,7 @@ const SCListComponent = {
 };
 
 const CartElement = {
-    props: ['id', 'title', 'qty', 'price', 'img'],
+    props: ['id', 'title', 'qty', 'price', 'img', 'rating'],
     template: `<div class="product-in-sc">
                                 <a href="single-page.htm" style="float: left; width: 240px;">
                                     <div class="product-in-sc-img" :style="img">
@@ -133,11 +129,7 @@ const CartElement = {
                                     <div class="product-in-sc-desc">
                                         <h3 class="h3-sc-name">{{title}}</h3>
                                         <div class="sc-rating">
-                                            <i class="fas fa-star rat"></i>
-                                            <i class="fas fa-star rat"></i>
-                                            <i class="fas fa-star rat"></i>
-                                            <i class="fas fa-star rat"></i>
-                                            <i class="fas fa-star rat"></i>
+                                            <rating-element v-for="n in rating" :key="n"></rating-element>
                                         </div>
                                         <div class="sc-count">{{qty}}&nbsp;x $ {{price}}</div>
 
@@ -157,6 +149,9 @@ const CartElement = {
         handleDeleteClick(){
             this.$emit('delete', this.id)
         }
+    },
+    components: {
+        'rating-element': RatingElement
     }
 };
 
@@ -172,7 +167,8 @@ const CartListComponent = {
                               :id="item.id"
                               :qty="item.qty"
                               :price="item.price"
-                              :img="item.cartDropMenuImage" 
+                              :img="item.cartDropMenuImage"
+                              :rating="item.rating" 
                               @delete="handleDeleteClick">
                             </cart-element>
                             <div class="total">
@@ -202,7 +198,7 @@ const CartListComponent = {
 };
 
 const CatalogListElement = {
-    props: ['id', 'title', 'price', 'img'],
+    props: ['id', 'title', 'price', 'img', 'rating'],
     template: `<div class="catalog-flex">
                         <a href="single-page.htm" class="productUnit">
                             <div class="unit-img" :style="img"></div>
@@ -210,17 +206,10 @@ const CatalogListElement = {
                                 <p class="productUnitName">{{title}}</p>
                                 <div class="procductUnitPrice">$ {{price}}</div>
                                 <div class="rating">
-                                    <i class="fas fa-star rat"></i>
-                                    <i class="fas fa-star rat"></i>
-                                    <i class="fas fa-star rat"></i>
-                                    <i class="fas fa-star rat"></i>
-                                    <i class="fas fa-star rat"></i>
+                                    <rating-element v-for="n in rating" :key="n"></rating-element>
                                 </div>
                             </div>
                         </a>
-                        <!--                          
-                        <a href="#" class="addtocard1">Add to card</a>
-                        -->
                         <button @click="handleBuyClick(id)"><span class="addtocard1">Add to card</span></button>
                         <a href="#" class="addtocard2"><i class="far fa-heart"></i></a>
                         <a href="#" class="addtocard3"><i class="fas fa-retweet"></i></a>
@@ -229,6 +218,9 @@ const CatalogListElement = {
         handleBuyClick(id) {
             this.$emit('buy', id);
         }
+    },
+    components: {
+        'rating-element': RatingElement
     }
 };
 
@@ -242,7 +234,8 @@ const CatalogListComponent = {
             :id="item.id"
             :title="item.title"
             :price="item.price"
-            :img="item.img"          
+            :img="item.img"
+            :rating="item.rating"          
             @buy="handleBuyClick(item)"
             ></catalog-list-element>            
           </div>`,
@@ -257,18 +250,14 @@ const CatalogListComponent = {
 };
 
 const FeatureContainerElement = {
-    props: ['id', 'title', 'img', 'price'],
+    props: ['id', 'title', 'img', 'price', 'rating'],
     template: `<article class="product-flex">
                     <a href="single-page.htm" class="product">
                         <div class="catalogunit" :style="img"></div>
                         <h4 class="unit-name">{{title}}</h4>
                         <div class="unit-price">$ {{price}}</div>
                         <div class="unit-price-rating">
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
-                            <i class="fas fa-star rat"></i>
+                            <rating-element v-for="n in rating" :key="n"></rating-element>
                         </div>
                     </a>
                     <button @click="handleBuyClick(id)">
@@ -279,6 +268,9 @@ const FeatureContainerElement = {
         handleBuyClick(id){
             this.$emit('buy', id)
         }
+    },
+    components: {
+        'rating-element': RatingElement
     }
 };
 
@@ -294,6 +286,7 @@ const FeatureContainerComponent = {
                                             :title="item.title"
                                             :price="item.price"
                                             :img="item.img"
+                                            :rating="item.rating" 
                                             @buy="handleBuyClick(item)"></feature-container-element>
             </div>
             <div class="browsebutton"><a class="button" href="catalog.htm">Browse All Product<i
