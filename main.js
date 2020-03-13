@@ -1,3 +1,7 @@
+const RatingElement = {
+    template: `<i class="fas fa-star rat"></i>`
+};
+
 const SCListElement = {
     props: ['id', 'title', 'qty', 'price', 'img', 'color', 'size', 'shipping'],
     template: `<div class="unit-shopping-card">
@@ -7,7 +11,7 @@ const SCListElement = {
                         <div class="unit-shopping-card-info">
                             <div class="unit-shopping-card-name">{{title}}</div>
                             <div class="unit-shopping-card-rating">
-                                <i class="fas fa-star rat"></i>
+                                <rating-element></rating-element>
                                 <i class="fas fa-star rat"></i>
                                 <i class="fas fa-star rat"></i>
                                 <i class="fas fa-star rat"></i>
@@ -38,6 +42,9 @@ const SCListElement = {
         handleQuantityChange(event){
             this.$emit('change', {id: this.id, qty: event.target.value})
         }
+    },
+    components: {
+        'rating-element': RatingElement
     }
 };
 
@@ -194,7 +201,7 @@ const CartListComponent = {
     }
 };
 
-const CatalogComponent = {
+const CatalogListElement = {
     props: ['id', 'title', 'price', 'img'],
     template: `<div class="catalog-flex">
                         <a href="single-page.htm" class="productUnit">
@@ -228,7 +235,7 @@ const CatalogComponent = {
 const CatalogListComponent = {
     props: ['items'],
     template: `<div class="product-catalog">
-            <catalog-component 
+            <catalog-list-element 
             v-if="items.length"
             v-for="item in items"
             :key="item.id"
@@ -237,7 +244,7 @@ const CatalogListComponent = {
             :price="item.price"
             :img="item.img"          
             @buy="handleBuyClick(item)"
-            ></catalog-component>            
+            ></catalog-list-element>            
           </div>`,
     methods: {
         handleBuyClick(item) {
@@ -245,7 +252,7 @@ const CatalogListComponent = {
         }
     },
     components: {
-        'catalog-component': CatalogComponent,
+        'catalog-list-element': CatalogListElement,
     },
 };
 
