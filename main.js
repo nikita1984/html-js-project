@@ -341,7 +341,8 @@ const HeaderComponent = {
                     </form>
                 </div>
                 <div class="header__right">
-                    <cart-list-component :items="items" 
+                    <cart-list-component v-if="items.length" 
+                                         :items="items" 
                                          @delete="handleDeleteClick"></cart-list-component>
                     <a class="button" href="#">My&nbsp;Account<i class="fas fa-caret-down"></i></a>
                 </div>
