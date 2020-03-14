@@ -822,14 +822,35 @@ const app = new Vue({
         handleQuantityChange(item) {
             const cartItem = this.cart.find((cartItem) => +cartItem.id === +item.id);
             cartItem.qty = item.qty;
+            cartItem.id = item.id;
 
-            fetch(`/cart/${item.id}`, {
-                method: 'PATCH',
-                body: JSON.stringify({qty: item.qty}),
-                headers: {
-                    'Content-type': 'application/json',
+            if (cartItem && cartItem.qty > 0) {
+                fetch(`/cart/${item.id}`, {
+                    method: 'PATCH',
+                    body: JSON.stringify({qty: item.qty}),
+                    headers: {
+                        'Content-type': 'application/json',
+                    }
+                })
+            } else {
+                if (confirm('Вы действительно хотите удалить последний товар?')) {
+                    fetch(`/cart/${item.id}`, {
+                        method: 'DELETE',
+                    }).then(() => {
+                        this.cart = this.cart.filter((filterItem) => filterItem.id !== cartItem.id);
+                    });
+                } else {
+                    fetch(`/cart/${item.id}`, {
+                        method: 'PATCH',
+                        body: JSON.stringify({qty: 1}),
+                        headers: {
+                            'Content-type': 'application/json',
+                        }
+                    }).then(() => {
+                        cartItem.qty = item.qty = 1;
+                    });
                 }
-            })
+            }
         }
     },
     components: {
