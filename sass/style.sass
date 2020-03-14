@@ -695,6 +695,7 @@ li
   background-repeat: no-repeat
   background-position: left 14px center
   transition: all .1s ease-out
+  cursor: pointer
   &:hover
     outline: 2px solid $white-color
 
@@ -966,7 +967,7 @@ footer
   line-height: 79px
 
 .icons
-  float: right
+  float: left
   a
     color: $pink-color
     font-size: 32px
@@ -981,6 +982,14 @@ footer
 .fl
   clear: both
 /*FOOTER*/
+/*OTHER*/
+.bc-white
+  background-color: $white-color
+.border-none
+  border: none
+  &:focus
+   outline: none
+/*OTHER*/
 @import "catalog"
 @import "checkout"
 @import "shopping-card"
