@@ -72,7 +72,7 @@ const SCListComponent = {
                               @change="handleQuantityChange"></sc-list-element>
                 <div class="shopping-card-buttons">
                     <div><a href="#" class="btn">cLEAR SHOPPING CART</a></div>
-                    <div><a href="checkout.htm" class="btn">cONTINUE sHOPPING</a></div>
+                    <div><a href="catalog.htm" class="btn">cONTINUE sHOPPING</a></div>
                 </div>
             </div>
             <div class="container flex">
